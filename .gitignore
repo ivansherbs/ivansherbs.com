@@ -61,8 +61,8 @@ typings/
 .next
 
 # Vim temporary files
-.swp
-.swo
+*.swp
+*.swo
 
 # MacOS hidden files
 .DS_Store

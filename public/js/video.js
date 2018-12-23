@@ -9,7 +9,8 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-iframe', {
         events: {
           'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
+          'onStateChange': onPlayerStateChange,
+          'verticalCentered': false
         }
     });
 }
@@ -22,11 +23,11 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
     switch (event.data) {
         case YT.PlayerState.PLAYING:
-            $('.page-loader').css({
+            $('.ih-page-loader').css({
                 opacity: 0,
                 visibility: 'hidden'
             });
-            $('.fullscreen .container').css({
+            $('.fullscreen .container, .fullscreen .ih-bg-container').css({
                 opacity: 1
             });
             break;
@@ -44,7 +45,11 @@ $(document).ready(function () {
     });
 
 	// fullPage.js initialization
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+        scrollingSpeed: 1400,
+        navigation: true,
+        showActiveTooltip: true
+    });
 });
 
 function updateVideoIframe() {
