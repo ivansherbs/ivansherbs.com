@@ -52,16 +52,6 @@ section {
 /* Classes */
 /* ******* */
 
-.ih-page-loader {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    background: #fff;
-    opacity: 1;
-}
 
 .ih-page-loader-inner {
     position: absolute;
@@ -122,7 +112,6 @@ section {
 .fullscreen {
     padding: 0;
     height: 100vh;
-    user-select: none;
     background-color: transparent;
 }
 .fullscreen::before {
@@ -159,12 +148,9 @@ section {
     font-size: 2rem;
 }
 
-.fullscreen .logo {
-    width: 200px;
-}
-
-.fullscreen div.logo {
+.logo {
     display: inline-block;
+    width: 200px;
     height: 200px;
     background: url("/images/logo/white_339.png");
     background-size: cover;
@@ -295,6 +281,7 @@ section {
     content: "\200B";
 }
 
+.ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
 .ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 .ih-bg-img-businessowner    { background-image: url("/images/back/businessowner.jpg"); }
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
@@ -303,11 +290,12 @@ section {
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
 
 /* Transitions */
-
+/*
 .ih-page-loader {
     transition: opacity 1s, visibility 0s 1s;
 }
 
 .fullscreen .container, .fullscreen .ih-bg-container {
-    transition: opacity 2s 4s;
+    transition: opacity 2s 1s;
 }
+*/
