@@ -52,10 +52,10 @@ $(document).ready(function () {
 	$('#fullpage').fullpage({
         scrollingSpeed: 1400,
         navigation: true,
-        showActiveTooltip: true
+        verticalCentered: false
     });
 
-    setTimeout(() => showFullscreenContent(), 2000)
+    //setTimeout(() => showFullscreenContent(), 2000)
 });
 
 function updateVideoIframe() {
