@@ -45,6 +45,15 @@ section {
     letter-spacing: 1rem;
 }
 
+.pt-s { padding-top: 20px }
+.pt-l { padding-top: 80px }
+
+.pb-s { padding-bottom: 20px }
+.pb-l { padding-bottom: 80px }
+
+.mt-s { margin-top: 20px }
+.mt-l { margin-top: 80px }
+
 .mb-s { margin-bottom: 20px }
 .mb-l { margin-bottom: 80px }
 
@@ -288,6 +297,22 @@ section {
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
+
+.ih-full-height {
+  min-height: 100vh;
+}
+
+.ih-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ih-vertical-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
 /* Transitions */
 /*
