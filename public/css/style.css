@@ -19,6 +19,24 @@ body {
     font: 1.236rem Papyrus, "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+	font-size: 2.5rem
+}
+
+h2 {
+	font-size: 2rem
+}
+
+@media (max-width: 450px), (max-height: 450px) {
+	h1 {
+		font-size: 2rem
+	}
+
+	h2 {
+		font-size: 1.5rem
+	}
+}
+
 a {
     color: #00B7FF;
 }
@@ -46,16 +64,26 @@ section {
 }
 
 .pt-s { padding-top: 20px }
+.pt-m { padding-top: 40px }
 .pt-l { padding-top: 80px }
 
 .pb-s { padding-bottom: 20px }
+.pb-m { padding-bottom: 40px }
 .pb-l { padding-bottom: 80px }
 
 .mt-s { margin-top: 20px }
+.mt-m { margin-top: 40px }
 .mt-l { margin-top: 80px }
 
 .mb-s { margin-bottom: 20px }
+.mb-m { margin-bottom: 40px }
 .mb-l { margin-bottom: 80px }
+
+@media (max-width: 450px), (max-height: 450px) {
+	.mb-s { margin-bottom: 15px }
+	.mb-m { margin-bottom: 30px }
+	.mb-l { margin-bottom: 50px }
+}
 
 /* ******* */
 /* Classes */
@@ -165,12 +193,25 @@ section {
     background-size: cover;
 }
 
+@media (max-width: 450px), (max-height: 450px) {
+	.logo {
+		width: 100px;
+		height: 100px;
+	}
+}
+
 .ih-heading {
 
 }
 
 .ih-subheading {
 
+}
+
+/* iziModal overrides*/
+
+.iziModal {
+    background:black;
 }
 
 /* Bootstrap overrides */
@@ -249,6 +290,15 @@ section {
     font-weight: bold;
 }
 
+@media (max-width: 450px), (max-height: 450px) {
+	.btn-fancy.btn-lg {
+		border-radius: 2rem;
+		padding: 0.5rem 1rem;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+}
+
 .btn-fancy.disabled,
 .btn-fancy:disabled {
     color: #fff;
@@ -290,6 +340,7 @@ section {
     content: "\200B";
 }
 
+.ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
 .ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 .ih-bg-img-businessowner    { background-image: url("/images/back/businessowner.jpg"); }
