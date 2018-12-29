@@ -51,11 +51,18 @@ $(document).ready(function () {
 	// fullPage.js initialization
 	$('#fullpage').fullpage({
         scrollingSpeed: 1400,
-        navigation: true,
-        verticalCentered: false
+        verticalCentered: false,
+        controlArrows: false
     });
 
     //setTimeout(() => showFullscreenContent(), 2000)
+
+	$("#modal").iziModal({
+        history: false,
+        iframe : true,
+        fullscreen: true,
+        headerColor: '#000000'
+	});
 });
 
 function updateVideoIframe() {
