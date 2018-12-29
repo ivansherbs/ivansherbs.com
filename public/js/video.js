@@ -50,18 +50,16 @@ $(document).ready(function () {
 
 	// fullPage.js initialization
 	$('#fullpage').fullpage({
-        scrollingSpeed: 1400,
+        scrollingSpeed: 1000,
+        fitToSection: false,
         verticalCentered: false,
         controlArrows: false
     });
 
-    //setTimeout(() => showFullscreenContent(), 2000)
-
 	$("#modal").iziModal({
-        history: false,
         iframe : true,
-        fullscreen: true,
-        headerColor: '#000000'
+        headerColor: '#000000',
+        width: "80%"
 	});
 });
 
