@@ -17,9 +17,8 @@
         <!-- fullPage.js CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" />
 
-        <!-- jQuery Modal -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
+        <!-- iziModal CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css" />
 
         <!-- our CSS-->
         <link href="css/style.css" rel="stylesheet">
@@ -30,17 +29,17 @@
         <header class="header header-transparent"></header>
         <div id="fullpage">
 
-            <section class="section text-center" data-anchor="ivan_chai">
+            <section class="section" data-anchor="ivan_chai">
+                <div class="slide text-center">
 <!--
-                <div class="ih-page-loader">
-                   <div class="ih-page-loader-inner">
-                      <div class="ih-spinner">
-                         <div class="ih-spinner-bounce"></div>
-                      </div>
-                   </div>
-                </div>
+                    <div class="ih-page-loader">
+                       <div class="ih-page-loader-inner">
+                          <div class="ih-spinner">
+                             <div class="ih-spinner-bounce"></div>
+                          </div>
+                       </div>
+                    </div>
 -->
-                <div class="slide">
                     <div class="ih-bg-container">
                         <div class="ih-bg-img ih-bg-img-ivanchaifield">
                             <div class="ih-bg-shadow ih-bg-shadow-darken"></div>
@@ -65,7 +64,7 @@
                     </div>
 -->
                 </div>
-                <div class="slide">
+                <div class="slide" data-anchor="benefits">
                     <div class="ih-bg-container">
                         <div class="ih-bg-img ih-bg-img-ivanchaihills">
                             <div class="ih-bg-shadow ih-bg-shadow-darken"></div>
@@ -98,7 +97,8 @@
                             <div class="ih-bg-shadow ih-bg-shadow-vignette"></div>
                         </div>
                     </div>
-<div id="modal" class="modais" data-izimodal-transitionin="fadeIn" data-izimodal-iframeURL="https://www.youtube.com/embed/op2BjUHk06s?controls=0&autoplay=1"></div>
+
+                    <div id="modal" data-izimodal-transitionin="fadeIn" data-izimodal-iframeURL="https://www.youtube.com/embed/op2BjUHk06s?controls=0&autoplay=1"></div>
 
                     <div class="container text-white ih-full-height ih-vertical-bottom">
                         <div class="row pb-l">
@@ -158,9 +158,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <!-- fullPage.js JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-        <!-- jQuery Modal -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+        <!-- iziModal JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"></script>
         <!-- then our JavaScript -->
         <script src="/js/video.js"></script>
     </body>
