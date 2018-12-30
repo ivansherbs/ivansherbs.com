@@ -55,9 +55,9 @@ $(document).ready(function () {
         recordHistory: false,
         verticalCentered: false,
         controlArrows: false,
-        autoScrolling: false,
-        fitToSection: true,
-        lockAnchors: false
+        //autoScrolling: false,
+        //fitToSection: true,
+        //lockAnchors: false
     });
 
 	$("#modal").iziModal({
