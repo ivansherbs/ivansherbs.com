@@ -73,6 +73,10 @@ section {
     letter-spacing: 0.8rem;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 @media (max-width: 450px), (max-height: 450px) {
     .f-wide {
         letter-spacing: 0.4rem;
@@ -255,6 +259,11 @@ section {
         font-size: 1rem;
         /*TODO*/
 	}
+
+    .logo.logo-sm .logo-image {
+        width: 64px;
+        height: 64px;
+    }
 }
 
 .ih-heading {
