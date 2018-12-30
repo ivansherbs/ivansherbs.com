@@ -201,6 +201,12 @@ section {
     font-size: 2rem;
 }
 
+.logo {
+    white-space: nowrap;
+    text-align: center;
+    user-select: none;
+}
+
 .logo .logo-image {
     display: inline-block;
     width: 200px;
@@ -209,30 +215,45 @@ section {
     background-size: cover;
 }
 
+.logo .logo-name {
+    display: block;
+    font-size: 2rem;
+}
+
+.logo .logo-motto {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.logo.logo-sm .logo-image {
+    width: 100px;
+    height: 100px;
+}
+
+.logo.logo-sm .logo-name {
+    font-size: 1.1rem;
+    letter-spacing: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.logo.logo-sm .logo-motto {
+    font-size: 0.7rem;
+}
+
 @media (max-width: 450px), (max-height: 450px) {
 	.logo .logo-image {
 		width: 100px;
 		height: 100px;
 	}
-}
 
-.logo h1 {
-    font-size: 2rem;
-}
-
-@media (max-width: 450px), (max-height: 450px) {
-	.logo h1 {
+	.logo .logo-name {
         font-size: 1.5rem;
+        /*TODO*/
 	}
-}
 
-.logo h2 {
-    font-size: 1.5rem;
-}
-
-@media (max-width: 450px), (max-height: 450px) {
-	.logo h2 {
+    .logo .logo-motto {
         font-size: 1rem;
+        /*TODO*/
 	}
 }
 
@@ -385,6 +406,10 @@ section {
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
+
+.ih-relative {
+  position: relative;
+}
 
 .ih-full-height {
   min-height: 100vh;
