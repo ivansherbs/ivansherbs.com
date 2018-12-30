@@ -21,7 +21,7 @@ body {
 
 @media (max-width: 450px), (max-height: 450px) {
     body {
-        font: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -378,6 +378,7 @@ section {
 
 .ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
+.ih-bg-img-ivanchaidrink    { background-image: url("/images/back/ivanchaidrink.jpg"); }
 .ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 .ih-bg-img-businessowner    { background-image: url("/images/back/businessowner.jpg"); }
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
