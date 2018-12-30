@@ -51,9 +51,13 @@ $(document).ready(function () {
 	// fullPage.js initialization
 	$('#fullpage').fullpage({
         scrollingSpeed: 1000,
-        fitToSection: false,
+        loopHorizontal: false,
+        recordHistory: false,
         verticalCentered: false,
-        controlArrows: false
+        controlArrows: false,
+        autoScrolling: false,
+        fitToSection: true,
+        lockAnchors: false
     });
 
 	$("#modal").iziModal({
