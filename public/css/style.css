@@ -80,6 +80,10 @@ section {
     white-space: nowrap;
 }
 
+.noselect {
+    user-select: none;
+}
+
 @media (max-width: 450px), (max-height: 450px) {
     .f-wide {
         letter-spacing: 0.4rem;
@@ -90,9 +94,17 @@ section {
 .pt-m { padding-top: 40px }
 .pt-l { padding-top: 80px }
 
+.pl-s { padding-left: 20px }
+.pl-m { padding-left: 40px }
+.pl-l { padding-left: 80px }
+
 .pb-s { padding-bottom: 20px }
 .pb-m { padding-bottom: 40px }
 .pb-l { padding-bottom: 80px }
+
+.pr-s { padding-right: 20px }
+.pr-m { padding-right: 40px }
+.pr-l { padding-right: 80px }
 
 .mt-s { margin-top: 20px }
 .mt-m { margin-top: 40px }
@@ -350,16 +362,20 @@ section {
     border: 2px dashed white;
     text-align: center;
     cursor: pointer;
+    user-select: none;
 }
 
 .btn-hint {
     font-size: 1rem;
     margin-left: 20px;
+    margin-right: 20px;
+    user-select: none;
 }
 
 .btn-hint i {
     font-size: 0.7rem;
     margin-right: 5px;
+    margin-left: 5px;
 }
 
 .btn-fancy {
@@ -435,12 +451,11 @@ section {
     content: "\200B";
 }
 
-.ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
 .ih-bg-img-ivanchaidrink    { background-image: url("/images/back/ivanchaidrink.jpg"); }
-.ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
-.ih-bg-img-businessowner    { background-image: url("/images/back/businessowner.jpg"); }
+.ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
+.ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
@@ -450,7 +465,7 @@ section {
 }
 
 .ih-full-height {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .ih-vertical-center {
@@ -482,8 +497,27 @@ section {
   }
 }
 
-.btn-hint {
+@keyframes bounceright {
+  0% {
+    margin-right: 20px;
+    margin-left: 0px;
+  }
+  50% {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  100% {
+    margin-right: 20px;
+    margin-left: 0px;
+  }
+}
+
+.btn-hint.bounce-left {
    animation: bounceleft 2s infinite;
+}
+
+.btn-hint.bounce-right {
+   animation: bounceright 2s infinite;
 }
 
 /* Transitions */
