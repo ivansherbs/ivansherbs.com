@@ -60,10 +60,21 @@ $(document).ready(function () {
         //lockAnchors: false
     });
 
-	$("#modal").iziModal({
+	$('#icvideo').iziModal({
         iframe : true,
+        title: ' ',
+        closeButton: true,
         headerColor: '#000000',
-        width: "80%"
+        overlayColor: 'rgba(0, 0, 0, 0.8)',
+        width: '80%'
+	});
+
+	$('#ichistory').iziModal({
+        title: ' ',
+        closeButton: true,
+        headerColor: '#000000',
+        overlayColor: 'rgba(0, 0, 0, 0.8)',
+        width: '80%'
 	});
 });
 
