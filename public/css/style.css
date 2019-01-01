@@ -123,9 +123,38 @@ section {
 .mr-l { margin-right: 80px }
 
 @media (max-width: 450px), (max-height: 450px) {
-	.mb-s { margin-bottom: 15px }
-	.mb-m { margin-bottom: 30px }
-	.mb-l { margin-bottom: 50px }
+    .pt-s { padding-top: 15px }
+    .pt-m { padding-top: 30px }
+    .pt-l { padding-top: 50px }
+
+    .pl-s { padding-left: 15px }
+    .pl-m { padding-left: 30px }
+    .pl-l { padding-left: 50px }
+
+    .pb-s { padding-bottom: 15px }
+    .pb-m { padding-bottom: 30px }
+    .pb-l { padding-bottom: 50px }
+
+    .pr-s { padding-right: 15px }
+    .pr-m { padding-right: 30px }
+    .pr-l { padding-right: 50px }
+
+    .mt-s { margin-top: 15px }
+    .mt-m { margin-top: 30px }
+    .mt-l { margin-top: 50px }
+
+    .ml-s { margin-left: 15px }
+    .ml-m { margin-left: 30px }
+    .ml-l { margin-left: 50px }
+
+    .mb-s { margin-bottom: 15px }
+    .mb-m { margin-bottom: 30px }
+    .mb-l { margin-bottom: 50px }
+
+    .mr-xs { margin-right: 10px }
+    .mr-s { margin-right: 15px }
+    .mr-m { margin-right: 30px }
+    .mr-l { margin-right: 50px }
 }
 
 /* ******* */
