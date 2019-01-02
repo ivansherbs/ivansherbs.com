@@ -52,12 +52,9 @@ $(document).ready(function () {
 	$('#fullpage').fullpage({
         scrollingSpeed: 1000,
         loopHorizontal: false,
-        recordHistory: false,
         verticalCentered: false,
         controlArrows: false,
-        //autoScrolling: false,
-        //fitToSection: true,
-        //lockAnchors: false
+        recordHistory: true
     });
 
 	$('#icvideo').iziModal({
