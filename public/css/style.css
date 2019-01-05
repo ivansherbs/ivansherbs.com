@@ -272,6 +272,16 @@ section {
     margin-bottom: 1rem;
 }
 
+.logo.logo-black .logo-image {
+    background-image: url("/images/logo/black_490.png");
+}
+.logo.logo-black .logo-name {
+    color: #000;
+}
+.logo.logo-black .logo-motto {
+    color: #000;
+}
+
 .logo .logo-name {
     display: block;
     font-size: 2rem;
@@ -332,7 +342,7 @@ section {
 /* iziModal overrides*/
 
 .iziModal {
-    background:black;
+    background: black;
 }
 
 /* Bootstrap overrides */
@@ -494,16 +504,17 @@ section {
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
 .ih-bg-img-vitality         { background-image: url("/images/back/vitality.jpg"); }
 .ih-bg-img-pouring          { background-image: url("/images/back/pouring.jpg"); }
+.ih-bg-img-missingivanchai  { background-image: url("/images/back/missingivanchai.jpg"); }
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
 
 .ih-relative {
-  position: relative;
+    position: relative;
 }
 
 .ih-full-height {
-  min-height: 100%;
+    min-height: 100%;
 }
 
 .ih-vertical-center {
@@ -522,6 +533,11 @@ section {
     color: #fff;
     font-size: 2.5rem;
     vertical-align: middle;
+}
+
+.ih-full-body {
+    overflow: hidden;
+    height: 100%;
 }
 
 /* Animations */
