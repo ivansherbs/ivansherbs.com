@@ -432,7 +432,10 @@ section {
     font-family: Papyrus;
     border: 2px solid transparent;
     border-color: #fff;
+    border-radius: 2.5rem;
+    padding: 0.5rem 1rem;
     transition: color 0.25s ease, background-color 0.25s ease;
+    cursor: pointer;
 }
 
 .btn-fancy:hover {
@@ -469,6 +472,10 @@ section {
     color: #212529;
     background-color: #fff;
     border-color: #fff;
+}
+
+.form-control.ih-fancy {
+    border-radius: 1.5rem;
 }
 
 .ih-bg-container {
