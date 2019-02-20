@@ -50,6 +50,10 @@ a {
     color: #00B7FF;
 }
 
+.text-white a {
+    color: #FFF;
+}
+
 ul {
     padding-left: 20px;
 }
@@ -509,6 +513,7 @@ section {
 .ih-bg-img-ivanchaidrink    { background-image: url("/images/back/ivanchaidrink.jpg"); }
 .ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
+.ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 .ih-bg-img-vitality         { background-image: url("/images/back/vitality.jpg"); }
 .ih-bg-img-pouring          { background-image: url("/images/back/pouring.jpg"); }
 .ih-bg-img-missingivanchai  { background-image: url("/images/back/missingivanchai.jpg"); }
