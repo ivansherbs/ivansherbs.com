@@ -170,7 +170,7 @@ section {
     bottom: 0;
     padding: 15px;
     color: white;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(60, 131, 184, .8);
     width: 100vw;
     text-align: center;
     z-index: 10;
@@ -528,17 +528,19 @@ section {
     content: "\200B";
 }
 
-.ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
-.ih-bg-img-ivanchaidrink    { background-image: url("/images/back/ivanchaidrink.jpg"); }
-.ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
 .ih-bg-img-forgotten        { background-image: url("/images/back/forgotten.jpg"); }
+.ih-bg-img-ivanchaidrink    { background-image: url("/images/back/ivanchaidrink.jpg"); }
+.ih-bg-img-ivanchaifield    { background-image: url("/images/back/ivanchaifield.jpg"); }
+.ih-bg-img-ivanchaihills    { background-image: url("/images/back/ivanchaihills.jpg"); }
+.ih-bg-img-michael          { background-image: url("/images/back/michael.jpg"); }
+.ih-bg-img-missingivanchai  { background-image: url("/images/back/missingivanchai.jpg"); }
+.ih-bg-img-pouring          { background-image: url("/images/back/pouring.jpg"); }
 .ih-bg-img-tealover         { background-image: url("/images/back/tealover.jpg"); }
 .ih-bg-img-vitality         { background-image: url("/images/back/vitality.jpg"); }
-.ih-bg-img-pouring          { background-image: url("/images/back/pouring.jpg"); }
-.ih-bg-img-missingivanchai  { background-image: url("/images/back/missingivanchai.jpg"); }
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
 .ih-bg-shadow-darken        { opacity: 0.4; background-color: #000000; }
+.ih-bg-shadow-lightdarken   { opacity: 0.2; background-color: #000000; }
 
 .ih-relative {
     position: relative;
