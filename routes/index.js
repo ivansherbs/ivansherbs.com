@@ -18,8 +18,14 @@ router.get('/subscribe', (req, res, next) => {
 
 // POST: subscribe action
 router.post('/subscribe', (req, res, next) => {
-    var email = (req.body.your_precious || '').substr(0, 100);
-    if (email.length === 100) {
+    var email = (req.body.email || '').substr(0, 101);
+    var firstName = (req.body.first_name || '').substr(0, 51);
+    var lastName = (req.body.last_name || '').substr(0, 51);
+
+    // TODO add validators library
+    //if (!email.match...)
+
+    if (email.length === 101) {
         // TODO add resources file for texts
         ERROR_EMAIL_ADDRESS_TOO_LONG = 'This email looks suspiciously long to us.<br>Please contact us in case you really want to add such a long email address.';
         res.render('subscribe', {
@@ -29,14 +35,25 @@ router.post('/subscribe', (req, res, next) => {
         });
         return;
     }
+    if (firstName.length === 51 || lastName.length === 51) {
+        // TODO add resources file for texts
+        ERROR_NAME_FIELD_TOO_LONG = 'We don\'t support names longer than 50 characters long.<br>Provide a shorter name or contact us in case you really want to enter such a long name.';
+        res.render('subscribe', {
+            layout: 'basic',
+            email: email,
+            error: ERROR_NAME_FIELD_TOO_LONG
+        });
+        return;
+    }
 
-    // TODO add validators library
-    //if (!email.match...)
+	subscribers.add(email, {
+        firstName: firstName,
+        lastName: lastName
+    }, err => {
 
-	subscribers.add(req.body.your_precious, err => {
         if (err) {
             ERROR_SUBSCRIBE_ADD_FAILED = 'Something terribly wrong happened while trying to save your email address. Please try again or contact us at hello@ivansherbs.com.';
-            res.render('subscribe', {
+            res.render('home', {
                 layout: 'basic',
                 email: email,
                 error: ERROR_SUBSCRIBE_ADD_FAILED
@@ -44,9 +61,8 @@ router.post('/subscribe', (req, res, next) => {
             return;
         }
 
-        res.render('subscribe', {
-            layout: 'basic',
-            message: 'Thank you for your support! The Ivan Chai Stories will soon reach you.'
+        res.render('thankyou', {
+            layout: 'basic'
         });
     });
 });
@@ -55,12 +71,6 @@ router.post('/subscribe', (req, res, next) => {
 
 router.get('*', function(req, res){
     res.status(404).render('error', { layout: 'basic' });
-});
-
-// TODO POST: pages
-router.post('/charge', (req, res, next) => {
-    console.dir(req.body);
-    res.redirect('thankyou');
 });
 
 module.exports = router;

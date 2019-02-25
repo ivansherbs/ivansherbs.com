@@ -42,37 +42,44 @@ function onPlayerStateChange(event) {
 }
 
 $(document).ready(function () {
-	//// video player initialization
+    //// video player initialization
     //updateVideoIframe();
     //$(window).resize(function() {
     //    updateVideoIframe();
     //});
 
-	// fullPage.js initialization
-	$('#fullpage').fullpage({
+    // fullPage.js initialization
+    $('#fullpage').fullpage({
         scrollingSpeed: 1000,
         loopHorizontal: false,
         verticalCentered: false,
         controlArrows: false,
-        recordHistory: true
+        recordHistory: true,
+        onLeave: function(origin, destination, direction) {
+            if (destination == 4) {
+                $('.ih-footer').fadeOut();
+            } else {
+                $('.ih-footer').fadeIn();
+            }
+        }
     });
 
-	$('#icvideo').iziModal({
+    $('#icvideo').iziModal({
         iframe : true,
         title: ' ',
         closeButton: true,
         headerColor: '#000000',
         overlayColor: 'rgba(0, 0, 0, 0.8)',
         width: '80%'
-	});
+    });
 
-	$('#ichistory').iziModal({
+    $('#ichistory').iziModal({
         title: ' ',
         closeButton: true,
         headerColor: '#000000',
         overlayColor: 'rgba(0, 0, 0, 0.8)',
         width: '80%'
-	});
+    });
 });
 
 function updateVideoIframe() {
@@ -81,8 +88,8 @@ function updateVideoIframe() {
     var contHeight = $videoContainer.height() + 50;
     var ratio = 0.5625;
 
-	var width = 0;
-	var height = 0;
+    var width = 0;
+    var height = 0;
     var margin = 0;
 
     if (ratio < contHeight / contWidth) {
@@ -94,9 +101,9 @@ function updateVideoIframe() {
         height = width * ratio;
     }
 
-	var $iframe = $('#video-iframe').css({
-		width: width + 'px',
-		height: height + 'px',
+    var $iframe = $('#video-iframe').css({
+        width: width + 'px',
+        height: height + 'px',
         margin: '0 0 0 -' + margin + 'px'
     });
 }
