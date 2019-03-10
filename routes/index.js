@@ -5,6 +5,9 @@ var router = express.Router();
 router.get('/', (req, res, next) => {
     res.render('home');
 });
+router.get('/winivansherbs', (req, res, next) => {
+    res.render('winivansherbs');
+});
 
 router.get('*', function(req, res){
     res.status(404).render('error', { layout: 'basic' });
