@@ -505,7 +505,7 @@ section {
 .ih-bg-img-vitality         { background-image: url("/images/back/vitality.jpg"); }
 .ih-bg-img-pouring          { background-image: url("/images/back/pouring.jpg"); }
 .ih-bg-img-icreferences     { background-image: url("/images/back/icreferences.jpg"); }
-.ih-bg-img-ivanchaiflowerupclose         { background-image: url("/images/back/ivanchaiflowerupclose.jpg"); }
+.ih-bg-img-ivanchaiflower   { background-image: url("/images/back/ivanchaiflowerupclose.jpg"); }
 .ih-bg-img-missingivanchai  { background-image: url("/images/back/missingivanchai.jpg"); }
 
 .ih-bg-shadow-vignette      { box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; }
