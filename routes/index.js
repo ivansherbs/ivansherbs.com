@@ -7,6 +7,9 @@ var subscribers = require('../lib/subscribers');
 router.get('/', (req, res, next) => {
     res.render('home');
 });
+router.get('/winivansherbs', (req, res, next) => {
+    res.render('winivansherbs');
+});
 
 /* Subscribe */
 
