@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
     res.render('home');
 });
 router.get('/winivansherbs', (req, res, next) => {
-    res.render('winivansherbs');
+    res.render('winivansherbs', { layout: 'info' });
 });
 
 /* Subscribe */
@@ -16,7 +16,7 @@ router.get('/winivansherbs', (req, res, next) => {
 // GET: subscribe page
 router.get('/subscribe', (req, res, next) => {
     var email = (req.query.email || '').substr(0, 100);
-    res.render('subscribe', { layout: 'basic', email: email });
+    res.render('subscribe', { layout: 'empty', email: email });
 });
 
 // POST: subscribe action
@@ -32,7 +32,7 @@ router.post('/subscribe', (req, res, next) => {
         // TODO add resources file for texts
         ERROR_EMAIL_ADDRESS_TOO_LONG = 'This email looks suspiciously long to us.<br>Please contact us in case you really want to add such a long email address.';
         res.render('subscribe', {
-            layout: 'basic',
+            layout: 'empty',
             email: email,
             error: ERROR_EMAIL_ADDRESS_TOO_LONG
         });
@@ -42,7 +42,7 @@ router.post('/subscribe', (req, res, next) => {
         // TODO add resources file for texts
         ERROR_NAME_FIELD_TOO_LONG = 'We don\'t support names longer than 50 characters long.<br>Provide a shorter name or contact us in case you really want to enter such a long name.';
         res.render('subscribe', {
-            layout: 'basic',
+            layout: 'empty',
             email: email,
             error: ERROR_NAME_FIELD_TOO_LONG
         });
@@ -57,7 +57,7 @@ router.post('/subscribe', (req, res, next) => {
         if (err) {
             ERROR_SUBSCRIBE_ADD_FAILED = 'Something terribly wrong happened while trying to save your email address. Please try again or contact us at hello@ivansherbs.com.';
             res.render('home', {
-                layout: 'basic',
+                layout: 'empty',
                 email: email,
                 error: ERROR_SUBSCRIBE_ADD_FAILED
             });
@@ -65,7 +65,7 @@ router.post('/subscribe', (req, res, next) => {
         }
 
         res.render('thankyou', {
-            layout: 'basic'
+            layout: 'empty'
         });
     });
 });
@@ -73,7 +73,7 @@ router.post('/subscribe', (req, res, next) => {
 // GET: 404 error page
 
 router.get('*', function(req, res){
-    res.status(404).render('error', { layout: 'basic' });
+    res.status(404).render('error', { layout: 'empty' });
 });
 
 module.exports = router;
