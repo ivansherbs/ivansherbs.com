@@ -574,6 +574,12 @@ section {
     vertical-align: middle;
 }
 
+@media (max-width: 450px), (max-height: 450px) {
+    .ih-social-buttons a i {
+        font-size: 1.5rem;
+    }
+}
+
 .ih-full-body {
     overflow: hidden;
     height: 100%;
