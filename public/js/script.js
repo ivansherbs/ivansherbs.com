@@ -56,6 +56,10 @@ $(document).ready(function () {
         controlArrows: false,
         recordHistory: true,
         onLeave: function(origin, destination, direction) {
+            if (window.location.pathname != '/freetrial') {
+                return;
+            }
+
             if (destination == 4) {
                 $('.ih-footer').fadeOut();
             } else {

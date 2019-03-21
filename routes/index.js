@@ -7,6 +7,11 @@ var subscribers = require('../lib/subscribers');
 router.get('/', (req, res, next) => {
     res.render('home');
 });
+// GET: /freetrial page
+router.get('/freetrial', (req, res, next) => {
+    res.render('freetrial');
+});
+// GET: /winivansherbs page
 router.get('/winivansherbs', (req, res, next) => {
     res.render('winivansherbs', { layout: 'info' });
 });
