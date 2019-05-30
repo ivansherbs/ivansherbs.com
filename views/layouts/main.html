@@ -19,11 +19,11 @@
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '340010556622301');
+            fbq('init', '{{config.facebook.pixelId}}');
           fbq('track', 'PageView');
         </script>
         <noscript><img height="1" width="1" style="display:none"
-          src="https://www.facebook.com/tr?id=340010556622301&ev=PageView&noscript=1"
+          src="https://www.facebook.com/tr?id={{config.facebook.pixelId}}&ev=PageView&noscript=1"
         /></noscript>
         <!-- End Facebook Pixel Code -->
 
@@ -57,7 +57,7 @@
         <title>Ivan Chai, a forgotten herbal infusion | Ivan's Herbs</title>
     </head>
     <body>
-		{{{body}}}
+        {{{body}}}
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
