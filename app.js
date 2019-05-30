@@ -1,3 +1,5 @@
+const config = require('config');
+
 var path = require('path');
 
 var express = require('express');
@@ -13,6 +15,9 @@ var indexRouter = require('./routes/index');
 var webRootDir = path.join(__dirname, 'public');
 
 var app = express();
+
+// save the configuration in the app locals
+app.locals.config = config;
 
 // view engine setup
 app.engine('html', exphbs({
