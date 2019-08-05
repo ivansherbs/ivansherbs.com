@@ -12,8 +12,6 @@ var logger = require('morgan');
 var meetRouter = require('./routes/meet');
 var indexRouter = require('./routes/index');
 
-var webRootDir = path.join(__dirname, 'public');
-
 var app = express();
 
 // save the configuration in the app locals
@@ -30,7 +28,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(webRootDir));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/meet', meetRouter);
 app.use('/', indexRouter);
