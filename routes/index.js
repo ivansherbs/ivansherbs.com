@@ -1,7 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+var contentRoutes = require('./content.json')
 
 var subscribers = require('../lib/subscribers');
+var content = require('../lib/content');
 
 // GET: home page
 router.get('/', (req, res, next) => {
@@ -14,6 +17,41 @@ router.get('/freetrial', (req, res, next) => {
 // GET: /winivansherbs page
 router.get('/winivansherbs', (req, res, next) => {
     res.render('winivansherbs', { layout: 'info' });
+});
+// GET: /<lang>/* pages
+router.get('/:lang/:title', (req, res, next) => {
+    var pageLanguage = req.params.lang;
+    var pageUrlTitle = req.params.title;
+
+    if (['en', 'nl', 'de'].indexOf(pageLanguage) === -1) {
+        next();
+        return
+    }
+
+    if (!contentRoutes[pageLanguage] || !contentRoutes[pageLanguage][pageUrlTitle]) {
+        next();
+        return
+    }
+
+    let contentPath = contentRoutes[pageLanguage][pageUrlTitle];
+
+    res.render('content/' + contentPath, { layout: 'empty', lang: req.params.lang }, async (err, page) => {
+
+        // if the view was not found
+        if (err && err.message.startsWith('Failed to lookup view')) {
+            // try to generate missing content
+            try {
+                await content.generatePage(contentPath);
+                res.render(err.view.name, { layout: 'empty', lang: req.params.lang });
+                return;
+            } catch (err) {
+                next();
+                return;
+            }
+        }
+
+        res.send(page);
+    });
 });
 
 /* Subscribe */

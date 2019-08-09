@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const path = require('path');
+global.BASEDIR = path.resolve(__dirname + '/..');
+
 var config = require('config');
 
 /**
