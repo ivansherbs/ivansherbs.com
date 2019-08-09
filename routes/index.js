@@ -1,10 +1,34 @@
+const config = require('config');
 const express = require('express');
+const fs = require('fs');
+
 const router = express.Router();
 
-var contentRoutes = require('./content.json')
+const contentRoutePath = config.get('content.sourceDir') + '/routes.json';
+console.dir(contentRoutePath);
+var contentRoutes = require(contentRoutePath);
 
-var subscribers = require('../lib/subscribers');
-var content = require('../lib/content');
+fs.watchFile(contentRoutePath, (curr, prev) => {
+    // TODO validation checks
+    console.log(`Updating routes. Content route file changed: ${contentRoutePath}`);
+
+    fs.readFile(contentRoutePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        try {
+            contentRoutes = JSON.parse(data);
+        } catch (err) {
+            console.error(`Error while loading the new content routes from file: ${contentRoutePath}`);
+            console.error(err);
+        }
+    });
+});
+
+const subscribers = require('../lib/subscribers');
+const content = require('../lib/content');
 
 // GET: home page
 router.get('/', (req, res, next) => {
