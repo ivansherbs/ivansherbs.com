@@ -59,7 +59,7 @@ router.get('/:lang/:title', (req, res, next) => {
 
     let contentPath = contentRoutes[pageLanguage][pageUrlTitle];
 
-    res.render('content/' + contentPath, { layout: 'empty', lang: req.params.lang }, async (err, page) => {
+    res.render('content/' + contentPath, { layout: 'content', lang: req.params.lang }, async (err, page) => {
 
         // if the view was not found
         if (err && err.message.startsWith('Failed to lookup view')) {
