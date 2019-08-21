@@ -84,7 +84,7 @@ function getContentPage(req, res, next) {
         if (err && err.message.startsWith('Failed to lookup view')) {
             // try to generate missing content
             try {
-                await content.generatePage(contentPath);
+                await content.generatePage(routeFile);
                 res.render(err.view.name, viewData);
                 return;
             } catch (err) {
