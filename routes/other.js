@@ -7,9 +7,6 @@ module.exports = function(router) {
     router.get('/', getRootPage);
     router.get('/freetrial', getFreetrialPage);
     router.get('/winivansherbs', getWinivansherbsPage);
-
-    // error page
-    router.get('*', getErrorPage);
 };
 
 const config = require('config');
