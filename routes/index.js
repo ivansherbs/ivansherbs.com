@@ -14,9 +14,10 @@ fs.readdirSync(__dirname).forEach(file => {
     }
 });
 
+
 // GET 404 error page
-function getErrorPage(req, res) {
+router.get('*', (req, res) => {
     res.status(404).render('error', { layout: 'empty' });
-}
+});
 
 module.exports = router;
