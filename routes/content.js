@@ -48,16 +48,44 @@ function getContentPage(req, res, next) {
         return
     }
 
-    let contentPath = content.routes[pageLanguage][pageUrlTitle];
+    const DEFAULT_TITLE = 'Ivan\'s Herbs';
 
-    res.render('content/' + contentPath, { layout: 'content', lang: req.params.lang }, async (err, page) => {
+    let route = content.routes[pageLanguage][pageUrlTitle];
+    let routeFile = route;
+    let routeTitle = DEFAULT_TITLE;
+    let routeDescription = DEFAULT_TITLE;
+    let routeKeywords = [];
 
+    if (typeof route === 'object') {
+        routeFile = route.file;
+        if (route.title) {
+            routeTitle = `${route.title} | ${DEFAULT_TITLE}`;
+        }
+        if (route.description) {
+            routeDescription = route.description;
+        }
+        if (route.keywords && Array.isArray(route.keywords) && route.keywords.length) {
+            routeKeywords = route.keywords;
+        }
+    }
+
+    let viewData = {
+        layout: 'content',
+        meta: {
+            lang: pageLanguage,
+            title: routeTitle,
+            description: routeDescription,
+            keywords: routeKeywords
+        }
+    };
+
+    res.render('content/' + routeFile, viewData, async (err, page) => {
         // if the view was not found
         if (err && err.message.startsWith('Failed to lookup view')) {
             // try to generate missing content
             try {
                 await content.generatePage(contentPath);
-                res.render(err.view.name, { layout: 'content', lang: req.params.lang });
+                res.render(err.view.name, viewData);
                 return;
             } catch (err) {
                 next();

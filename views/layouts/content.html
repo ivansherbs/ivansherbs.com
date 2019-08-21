@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en" class="ih-full-body">
+<html lang="{{ meta.lang }}" class="ih-full-body">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{{ meta.description }}">
+        <meta name="keywords" content="{{ meta.keywords }}">
 
         <!-- Favicons -->
         <link rel="shortcut icon" href="/images/favicon/mono_64.png">
@@ -17,7 +19,7 @@
         <!-- our CSS-->
         <link href="/css/content.css" rel="stylesheet">
 
-        <title>Ivan's Herbs</title>
+        <title>{{ meta.title }}</title>
     </head>
     <body>
 		{{{body}}}
