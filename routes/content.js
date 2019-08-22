@@ -21,6 +21,31 @@ const fs = require('fs');
 const content = require('../lib/content');
 const inspectKey = config.get('admin.inspectKey');
 
+function getJsonLinkAnnotator(lang) {
+    return  function(key, value) {
+        // annotate route URLs (top keys)
+        if (!key) {
+            let annotatedObj = {};
+            for (route in value) {
+                let link = `<a href='/${lang}/${route}' target='_blank'>${route}</a>`;
+                annotatedObj[link] = value[route];
+            }
+            value = annotatedObj;
+        }
+
+        const contentRepoRoot = config.get('admin.contentRepoRoot');
+
+        // annotate content file paths (top key values if string or 'file' child key value)
+        if (key == 'file' || key.startsWith('<a href')) {
+            if (typeof value === 'string') {
+                let link = `<a href='${contentRepoRoot}${value.replace('.html', '.md')}' target='_blank'>${value}</a>`;
+                value = link;
+            }
+        }
+
+        return value;
+    };
+}
 
 // ***************
 // route functions
@@ -34,8 +59,9 @@ function getContentPagesForLanguage(req, res, next) {
         next();
         return
     }
-
-    res.send(content.routes[pageLanguage] || {});
+    let beautyJson = JSON.stringify(content.routes[pageLanguage] || {}, getJsonLinkAnnotator(pageLanguage), 4)
+    let response=`<pre>${beautyJson}</pre>`;
+    res.send(response);
 }
 
 // GET /:lang/:title
