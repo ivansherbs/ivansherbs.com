@@ -1,0 +1,12 @@
+<h1>Product Overview</h1>
+
+{{#each products }}
+    <div>
+        <img src="{{ coverImage }}"/>
+        <h2>{{ name }}</h2>
+        <span>{{ description }}</span>
+        <br>
+        <a href="/{{ ../language }}/{{ link }}">View details</a>
+    </div>
+    <hr/>
+{{/each}}

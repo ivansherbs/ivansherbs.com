@@ -4,30 +4,29 @@
 
 module.exports = function(router) {
     // public routes
-    router.get('/:lang(en|nl)/:title', getContentPage);
+    router.get('/:language(en|nl)/:title', getContentPage);
 
     // internal routes
-    router.get('/:lang(en|nl)', getContentPagesForLanguage);
+    router.get('/:language(en|nl)', getContentPagesForLanguage);
 };
 
 
-// ****************************
-// route functions dependencies
-// ****************************
+// ***************************
+// route function dependencies
+// ***************************
 
 const config = require('config');
-const fs = require('fs');
 
 const content = require('../lib/content');
 const inspectKey = config.get('admin.inspectKey');
 
-function getJsonLinkAnnotator(lang) {
+function getJsonLinkAnnotator(language) {
     return  function(key, value) {
         // annotate route URLs (top keys)
         if (!key) {
             let annotatedObj = {};
             for (route in value) {
-                let link = `<a href='/${lang}/${route}' target='_blank'>${route}</a>`;
+                let link = `<a href="/${language}/${route}" target="_blank">${route}</a>`;
                 annotatedObj[link] = value[route];
             }
             value = annotatedObj;
@@ -51,9 +50,9 @@ function getJsonLinkAnnotator(lang) {
 // route functions
 // ***************
 
-// GET /:lang
+// GET /:language
 function getContentPagesForLanguage(req, res, next) {
-    var pageLanguage = req.params.lang;
+    var pageLanguage = req.params.language;
 
     if (req.query.key !== inspectKey) {
         next();
@@ -64,9 +63,9 @@ function getContentPagesForLanguage(req, res, next) {
     res.send(response);
 }
 
-// GET /:lang/:title
+// GET /:language/:title
 function getContentPage(req, res, next) {
-    var pageLanguage = req.params.lang;
+    var pageLanguage = req.params.language;
     var pageUrlTitle = req.params.title;
 
     if (!content.routes[pageLanguage] || !content.routes[pageLanguage][pageUrlTitle]) {
