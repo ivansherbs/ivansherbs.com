@@ -26,7 +26,7 @@ function getJsonLinkAnnotator(language) {
         if (!key) {
             let annotatedObj = {};
             for (route in value) {
-                let link = `<a href="/${language}/${route}" target="_blank">${route}</a>`;
+                let link = `<a href='/${language}/${route}' target='_blank'>${route}</a>`;
                 annotatedObj[link] = value[route];
             }
             value = annotatedObj;
